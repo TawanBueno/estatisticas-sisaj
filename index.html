@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z' /%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SISAJ Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Support for Tailwind's dark mode
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#4f46e5', // indigo-600
+                light: '#6366f1',   // indigo-500
+                dark: '#4338ca',    // indigo-700
+              },
+              secondary: {
+                DEFAULT: '#10b981', // emerald-500
+                light: '#34d399',   // emerald-400
+                dark: '#059669',    // emerald-600
+              },
+              background: {
+                light: '#f1f5f9', // slate-100
+                dark: '#0f172a'  // slate-900
+              },
+              surface: {
+                light: '#ffffff', // white
+                dark: '#1e293b'  // slate-800
+              },
+              'on-surface': {
+                light: '#1e293b', // slate-800
+                dark: '#e2e8f0'  // slate-200
+              },
+              'on-surface-variant': {
+                light: '#64748b', // slate-500
+                dark: '#94a3b8'  // slate-400
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      // Aplica o tema imediatamente para evitar FOUC (Flash of Unstyled Content)
+      if (localStorage.getItem('sisaj_theme') === 'dark' || (!('sisaj_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+
+<!-- Adiciona o Babel Standalone para transpilar TSX/JSX no navegador -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.3",
+    "jspdf": "https://esm.sh/jspdf@^3.0.1",
+    "xlsx": "https://esm.sh/xlsx@^0.18.5",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+    "react-dropzone": "https://esm.sh/react-dropzone@^14.3.8",
+    "recharts/": "https://esm.sh/recharts@^3.1.0/",
+    "recharts": "https://esm.sh/recharts@^3.1.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/estatisticas-sisaj/assets/index-JIVGubA_.js"></script>
+  <link rel="stylesheet" crossorigin href="/estatisticas-sisaj/assets/index-DyjnGkDI.css">
+</head>
+  <body class="font-sans">
+    <div id="root"></div>
+    <!-- Modifica o script para ser processado pelo Babel, permitindo a execução de TSX -->
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
+</body>
+</html>
